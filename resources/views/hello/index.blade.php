@@ -7,9 +7,12 @@
     </head>
     <body>
         <h1>Hello</h1>
+        @if($msg != '')
         <p>{{$msg}}</p>
+        @else
+        <p>何か書いてください</p>
+        @endif
         <form method="POST" action="/hello">
-            <!--csrf対策　トークン-->
             {{ csrf_field() }}
             <input type="text" name="msg">
             <input type="submit">

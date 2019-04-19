@@ -24,17 +24,11 @@ function tag($tag, $txt) {
 class HelloController extends Controller {
 
     public function index() {
-        $data = ['msg' => 'お名前を入力してください。',
-        ];
-        return view('hello.index', $data);
+        return view('hello.index', ['msg'=>'']);
     }
 //post送信
     public function post(Request $request) {
-        $msg = $request->msg;
-        $data = [
-            'msg' => 'こんにちわ、' . $msg . 'さん',
-        ];
-        return view('hello.index', $data);
+        return view('hello.index', ['msg'=>$request->msg]);
     }
 
 }
