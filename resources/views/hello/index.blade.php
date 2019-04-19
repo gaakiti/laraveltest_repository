@@ -8,5 +8,11 @@
     <body>
         <h1>Hello</h1>
         <p>{{$msg}}</p>
+        <form method="POST" action="/hello">
+            <!--csrf対策　トークン-->
+            {{ csrf_field() }}
+            <input type="text" name="msg">
+            <input type="submit">
+        </form>
     </body>
 </html>

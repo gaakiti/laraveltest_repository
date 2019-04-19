@@ -14,11 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::get('hello', function () {
-//    //フォルダ名　ファイル名
-//    return view('hello.index');
-//});
 
-Route::get('hello/','HelloController@index');
-//Route::get('hello/other','HelloController@other');
-//Route::get('hello','HelloController');
+Route::get('hello','HelloController@index');
+//post送信
+Route::post('hello','HelloController@post');
